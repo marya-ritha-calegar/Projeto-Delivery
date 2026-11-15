@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Delivery Japonês</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topo">
+        <a href="#inicio" class="logo">✿ Sakura <span>Delivery</span></a>
+
+        <button id="botaoMenu" class="botao-menu">☰</button>
+
+        <nav id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#carrinho">Carrinho</a>
+            <a href="#pedidos">Meus pedidos</a>
+            <a href="#perfil">Perfil</a>
+            <a href="#conta" class="botao">Login</a>
+            <a href="#cadastro" class="botao destaque">Cadastro</a>
+        </nav>
+
+        <button id="botaoTema" class="botao-tema" title="Mudar tema">☾</button>
+    </header>
+
+    <main>
+
+        <section class="capa" id="inicio">
+            <div class="capa-texto">
+                <p class="laranja">SABOR JAPONÊS NA SUA CASA</p>
+                <h1>Seu sushi favorito,<br>
+                    <span>na sua porta!</span>
+                </h1>
+                <p>Conheça nosso cardápio de comidas japonesas
+                    preparadas com muito cuidado e ingredientes frescos.</p>
+                <a href="#produtos" class="botao destaque">Ver cardápio →</a>
+            </div>
+
+            <img class="imagem-capa"
+                src="prato-sushi.pricipal.png"
+                alt="Prato de sushi">
+        </section>
+
+        <section class="vantagens">
+            <article><span></span><div><b>Entrega rápida</b><p>Seu pedido sem demora</p></div></article>
+            <article><span></span><div><b>Ingredientes frescos</b><p>Qualidade em cada peça</p></div></article>
+            <article><span></span><div><b>Feito com cuidado</b><p>Sabor que surpreende</p></div></article>
+        </section>
+
+        <section class="secao" id="produtos">
+            <p class="laranja">ESCOLHA SEUS FAVORITOS</p>
+            <h2>Nosso cardápio</h2>
+
+            <input type="search" id="buscaProdutos"
+                class="campo-busca" maxlength="50"
+                placeholder="Buscar produto...">
+
+            <div class="categorias">
+                <button class="categoria ativa" data-categoria="Todos">Todos</button>
+                <button class="categoria" data-categoria="Sushi">Sushi</button>
+                <button class="categoria" data-categoria="Temaki">Temaki</button>
+                <button class="categoria" data-categoria="Combinado">Combinados</button>
+                <button class="categoria" data-categoria="Bebida">Bebidas</button>
+            </div>
+
+            <div id="listaProdutos" class="grade-produtos"></div>
+            <p id="semProduto" hidden>Nenhum produto encontrado.</p>
+        </section>
+
+        <section class="secao duas-colunas">
+            <div class="painel" id="carrinho">
+                <h2>Meu carrinho</h2>
+                <p class="texto-fraco">Confira os produtos escolhidos.</p>
+                <div id="itensCarrinho"></div>
+
+                <div class="resumo">
+                    <p>Subtotal: <b id="subtotal">R$ 0,00</b></p>
+                    <p>Entrega: <b id="entrega">R$ 0,00</b></p>
+                    <p class="total">Total: <b id="total">R$ 0,00</b></p>
+                    <button id="finalizarPedido" class="botao destaque largura-total">
+                        Finalizar pedido
+                    </button>
+                </div>
+            </div>
+
+            <div class="painel" id="pedidos">
+                <h2>Meus pedidos</h2>
+                <input type="search" id="buscaPedidos"
+                    class="campo-busca" maxlength="20"
+                    placeholder="Buscar número do pedido...">
+                <div id="listaPedidos">
+                    <p class="texto-fraco">Seus pedidos aparecerão aqui.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao duas-colunas" id="conta">
+            <div class="painel">
+                <p class="laranja">BEM-VINDO DE VOLTA</p>
+                <h2>Login</h2>
+
+                <form id="formLogin">
+                    <label for="loginEmail">E-mail</label>
+                    <input type="email" id="loginEmail"
+                        maxlength="80" required placeholder="voce@email.com">
+
+                    <label for="loginSenha">Senha</label>
+                    <input type="password" id="loginSenha"
+                        minlength="6" maxlength="20" required>
+
+                    <button type="submit" class="botao destaque largura-total">
+                        Entrar
+                    </button>
+                </form>
+            </div>
+
+            <div class="painel" id="cadastro">
+                <p class="laranja">FAÇA PARTE DA SAKURA</p>
+                <h2>Criar conta</h2>
+
+                <form id="formCadastro">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" maxlength="60"
+                        required placeholder="Seu nome completo">
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" maxlength="80"
+                        required placeholder="voce@email.com">
+
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" maxlength="15"
+                        inputmode="numeric" required placeholder="(31) 99999-9999">
+
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" maxlength="14"
+                        inputmode="numeric" required placeholder="000.000.000-00">
+
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" maxlength="9"
+                        inputmode="numeric" required placeholder="00000-000">
+
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" maxlength="100"
+                        required placeholder="Rua, número e bairro">
+
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" minlength="6"
+                        maxlength="20" required placeholder="De 6 a 20 caracteres">
+
+                    <button type="submit" class="botao destaque largura-total">
+                        Cadastrar
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="secao" id="perfil">
+            <div class="painel">
+                <p class="laranja">SUA CONTA</p>
+                <h2>Perfil do usuário</h2>
+                <div id="dadosPerfil">
+                    <p class="texto-fraco">
+                        Faça seu cadastro para visualizar seus dados.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <a href="#inicio" class="logo">✿ Sakura <span>Delivery</span></a>
+        <p>Comida japonesa feita com cuidado, entregue até você.</p>
+        <div>
+            <a href="#produtos">Cardápio</a>
+            <a href="#conta">Login</a>
+            <a href="#cadastro">Cadastro</a>
+        </div>
+        <small>© 2026 Sakura Delivery Japonês · Projeto escolar</small>
+    </footer>
+
+    <div id="aviso" class="aviso" role="status"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
